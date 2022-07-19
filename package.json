@@ -7,8 +7,10 @@
     "lint": "next lint",
     "build": "next build",
     "export": "next export",
-    "xml": "babel-node xml.js",
-    "deploy": "npm run sitemap && vercel --prod"
+    "sitemap": "node lib/sitemap.mjs",
+    "rss": "node lib/rss.mjs",
+    "postbuild": "yarn sitemap && yarn rss",
+    "deploy": "npm run rss && npm run sitemap && vercel --prod"
   },
   "author": "Zeno Rocha",
   "license": "MIT",
@@ -49,6 +51,7 @@
     "remark": "^13.0.0",
     "remark-parse": "^9.0.0",
     "remark-react": "^8.0.0",
+    "rss": "^1.2.2",
     "shufflejs": "^5.2.3",
     "twilio": "^3.60.0",
     "unified": "^9.2.0"

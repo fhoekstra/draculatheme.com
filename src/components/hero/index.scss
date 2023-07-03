@@ -1,0 +1,16 @@
+.hero {
+  width: 100%;
+  min-height: 25rem;
+  position: relative;
+  background-color: var(--hero-background-color-01);
+  background-image: linear-gradient(
+    to bottom,
+    var(--hero-background-color-01),
+    var(--hero-background-color-02)
+  );
+
+  .particles {
+    position: absolute;
+    inset: 0;
+  }
+}

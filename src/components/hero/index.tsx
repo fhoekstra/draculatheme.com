@@ -6,6 +6,7 @@ const Hero = () => {
   return (
     <section className="hero">
       <Particles className="particles" />
+      <div className="castle"></div>
     </section>
   );
 };

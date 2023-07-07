@@ -32,7 +32,7 @@
       .route {
         padding: 0.25rem 0.375rem;
         display: flex;
-        border-radius: 0.5rem;
+        border-radius: var(--radius-s);
         text-transform: uppercase;
         font-weight: 900;
         color: var(--text-color-03);
@@ -55,7 +55,7 @@
         gap: 0.5rem;
         outline: 0.125rem;
         outline-color: var(--background-color-03);
-        border-radius: 0.5rem;
+        border-radius: var(--radius-s);
         border: none;
         font-family: inherit;
         font-size: inherit;
@@ -99,7 +99,7 @@
           display: flex;
           align-items: flex-start;
           gap: 0.5rem;
-          border-radius: 0.5rem;
+          border-radius: var(--radius-s);
           line-height: 1;
           text-decoration: none;
           font-family: var(--font-satoshi);

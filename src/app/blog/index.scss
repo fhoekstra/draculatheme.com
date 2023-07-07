@@ -14,6 +14,8 @@
     gap: 1.5rem;
 
     .post {
+      text-decoration: none;
+      color: inherit;
       width: 22.75rem;
       height: 25rem;
       overflow: hidden;
@@ -21,9 +23,8 @@
       flex-flow: wrap column;
       align-items: center;
       gap: 2rem;
-      border-radius: 1.5rem;
-      text-decoration: none;
-      color: inherit;
+      border-radius: var(--radius-l);
+
       background-color: var(--background-color-02);
 
       .cover-image {

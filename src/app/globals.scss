@@ -2,24 +2,31 @@
 @use "sass:math";
 
 :root {
-  --background-color-01: hsl(256, 14%, 6%);
+  --background-color-01: hsl(255, 13%, 6%);
   --background-color-02: hsl(226, 14%, 12%);
   --background-color-03: hsl(230, 14%, 10%);
 
   --hero-background-color-01: hsl(225, 20%, 14%);
   --hero-background-color-02: hsl(230, 26%, 28%);
 
+  --overlay-background-color-01: hsla(256, 13%, 6%, 80%);
+
   --text-color-01: hsl(0, 0%, 100%);
   --text-color-02: hsl(240, 2%, 82%);
   --text-color-03: hsl(256, 14%, 6%);
+
+  --border-color-01: hsl(224, 6%, 30%);
 
   --cyan: hsl(180, 88%, 66%);
   --green: hsl(115, 92%, 66%);
   --orange: hsl(35, 92%, 66%);
   --pink: hsl(330, 92%, 66%);
-  --purple: hsl(250, 92%, 66%);
+  --purple: rgb(115, 89, 248);
   --red: hsl(10, 92%, 66%);
   --yellow: hsl(60, 92%, 66%);
+
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
 
   --radius-s: 0.25rem;
   --radius-m: 0.5rem;
@@ -28,14 +35,19 @@
 
 * {
   box-sizing: border-box;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-variant-numeric: tabular-nums;
-  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &::selection {
+    background-color: var(--purple);
+    color: var(--black);
+  }
 }
 
 html {
+  text-size-adjust: 100%;
   font-size: 100%;
+  font-variation-settings: normal;
 }
 
 html,
@@ -47,7 +59,7 @@ body {
 body {
   line-height: 1.8;
   font-family: var(--font-inter);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-color-01);
   background-color: var(--background-color-01);
@@ -60,6 +72,8 @@ main {
   .page-wrapper {
     max-width: 120rem;
     padding: 0 6rem;
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -69,6 +83,7 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   font-family: var(--font-satoshi);
 }
 
@@ -93,8 +108,22 @@ h6 {
   font-size: 1rem;
 }
 
+p {
+  margin: 0;
+}
+
+a {
+  font-weight: 700;
+  color: inherit;
+}
+
 .icon {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   line-height: 1;
+  text-transform: uppercase;
+  font-weight: 700;
 
   svg {
     width: 1rem;

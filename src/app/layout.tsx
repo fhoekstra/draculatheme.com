@@ -4,11 +4,15 @@ import "./globals.scss";
 
 import { AnimatePresence } from "framer-motion";
 import Header from "src/components/header";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = localFont({
+  display: "swap",
+  src: "../../public/fonts/inter.ttf",
+  variable: "--font-inter",
+});
 const satoshi = localFont({
+  display: "swap",
   src: "../../public/fonts/satoshi.ttf",
   variable: "--font-satoshi",
 });

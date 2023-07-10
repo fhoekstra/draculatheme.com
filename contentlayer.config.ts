@@ -11,7 +11,7 @@ const Author = defineNestedType(() => ({
       type: "string",
       description: "The name of the author",
     },
-    picture: {
+    avatar: {
       type: "string",
       description: "The picture of the author",
     },

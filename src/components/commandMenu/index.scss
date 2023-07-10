@@ -1,0 +1,218 @@
+.search-wrapper {
+  position: relative;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  input {
+    width: 100%;
+    padding: 1rem 0.5rem 1rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    outline: 0.125rem;
+    outline-color: var(--background-color-03);
+    border-radius: var(--radius-s);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    color: var(--text-color-02);
+    background-color: var(--background-color-03);
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    transition: color 0.16s ease-in-out;
+
+    &.search {
+      left: 1.5rem;
+    }
+
+    &.cmdk {
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-s);
+      background-color: var(--background-color-01);
+      left: calc(100% - 2.5rem);
+    }
+  }
+
+  &:focus-within,
+  &:hover {
+    .icon {
+      color: var(--purple);
+    }
+  }
+}
+
+[cmdk-overlay] {
+  position: fixed;
+  inset: 0;
+  bottom: 0;
+  background-color: var(--overlay-background-color-01);
+  backdrop-filter: blur(0.25rem);
+  z-index: 2;
+}
+
+[cmdk-dialog] {
+  width: 100%;
+  max-width: 40rem;
+  padding: 0.5rem;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  border-radius: 0.75rem;
+  border: 0.0625rem solid var(--border-color-01);
+  background: var(--overlay-background-color-01);
+  box-shadow: var(--box-shadow);
+  transition: transform 100ms ease;
+  z-index: 3;
+}
+
+[cmdk-input] {
+  font-family: var(--font-sans);
+  border: none;
+  width: 100%;
+  font-size: 1.0625rem;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  outline: none;
+  background: var(--bg);
+  color: var(--gray12);
+  border-bottom: 0.0625rem solid var(--gray6);
+  margin-bottom: 1rem;
+  border-radius: 0;
+
+  &::placeholder {
+    color: var(--gray9);
+  }
+}
+
+[cmdk-vercel-badge] {
+  height: 1.25rem;
+  background: var(--grayA3);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  color: var(--grayA11);
+  border-radius: 0.25rem;
+  margin: 0.25rem 0 0.25rem 0.25rem;
+  user-select: none;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+[cmdk-item] {
+  content-visibility: auto;
+
+  cursor: pointer;
+  height: 3rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  color: var(--gray11);
+  user-select: none;
+  will-change: background, color;
+  transition: all 150ms ease;
+  transition-property: none;
+
+  &[data-selected="true"] {
+    background: var(--grayA3);
+    color: var(--gray12);
+  }
+
+  &[data-disabled="true"] {
+    color: var(--gray8);
+    cursor: not-allowed;
+  }
+
+  &:active {
+    transition-property: background;
+    background: var(--gray4);
+  }
+
+  & + [cmdk-item] {
+    margin-top: 0.25rem;
+  }
+
+  svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+[cmdk-list] {
+  height: min(20.625rem, calc(var(--cmdk-list-height)));
+  max-height: 25rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+  transition: 100ms ease;
+  transition-property: height;
+}
+
+[cmdk-vercel-shortcuts] {
+  display: flex;
+  margin-left: auto;
+  gap: 0.5rem;
+
+  kbd {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    min-width: 1.25rem;
+    padding: 0.25rem;
+    height: 1.25rem;
+    border-radius: 0.25rem;
+    color: var(--gray11);
+    background: var(--gray4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+}
+
+[cmdk-separator] {
+  height: 0.0625rem;
+  width: 100%;
+  background: var(--gray5);
+  margin: 0.25rem 0;
+}
+
+*:not([hidden]) + [cmdk-group] {
+  margin-top: 0.5rem;
+}
+
+[cmdk-group-heading] {
+  user-select: none;
+  font-size: 0.75rem;
+  color: var(--gray11);
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+[cmdk-empty] {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  white-space: pre-wrap;
+  color: var(--gray11);
+}

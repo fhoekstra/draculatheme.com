@@ -2,6 +2,7 @@ import "./index.scss";
 
 import * as Icon from "react-feather";
 
+import CommandMenu from "../commandMenu";
 import Link from "next/link";
 import navItems from "../../lib/navItems";
 import { usePathname } from "next/navigation";
@@ -12,21 +13,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container">
-        <div className="brand-wrapper">
-          <span className="brand">Dracula</span>
-          <span className="route">Theme</span>
-        </div>
-        <div className="search-wrapper">
-          <input
-            type="search"
-            name="global-search"
-            id="global-search"
-            placeholder="Search for a theme"
-          />
-          <span className="icon">
-            <Icon.Search />
-          </span>
-        </div>
+        <Link href={"/"}>
+          <div className="brand-wrapper">
+            <span className="brand">Dracula</span>
+            <span className="route">Theme</span>
+          </div>
+        </Link>
+        <CommandMenu />
         <nav className="nav">
           <ul>
             {Object.entries(navItems).map(([path, { title }], index) => {

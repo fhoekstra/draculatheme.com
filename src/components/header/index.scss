@@ -8,6 +8,10 @@
   background-color: var(--background-color-01);
   z-index: 2;
 
+  a {
+    text-decoration: none;
+  }
+
   .container {
     max-width: 120rem;
     margin: 0 auto;
@@ -37,51 +41,6 @@
         font-weight: 900;
         color: var(--text-color-03);
         background-color: var(--purple);
-      }
-    }
-
-    .search-wrapper {
-      position: relative;
-      display: block;
-      flex-basis: 0;
-      flex-grow: 1;
-      flex-shrink: 1;
-
-      input {
-        width: 100%;
-        padding: 1rem 0.5rem 1rem 3rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        outline: 0.125rem;
-        outline-color: var(--background-color-03);
-        border-radius: var(--radius-s);
-        border: none;
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: 700;
-        color: var(--text-color-02);
-        background-color: var(--background-color-03);
-
-        &::placeholder {
-          font-family: inherit;
-          font-size: inherit;
-          color: inherit;
-        }
-      }
-
-      .icon {
-        position: absolute;
-        transform: translateY(-50%);
-        top: 50%;
-        left: 1rem;
-        transition: color 0.16s ease-in-out;
-      }
-
-      &:focus-within {
-        .icon {
-          color: var(--purple);
-        }
       }
     }
 

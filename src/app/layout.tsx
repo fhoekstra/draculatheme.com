@@ -2,7 +2,6 @@
 
 import "./globals.scss";
 
-import { AnimatePresence } from "framer-motion";
 import Header from "src/components/header";
 import localFont from "next/font/local";
 
@@ -23,13 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <AnimatePresence>
-      <html lang="en">
-        <body className={`${inter.variable} ${satoshi.variable}`}>
-          <Header />
-          <main>{children}</main>
-        </body>
-      </html>
-    </AnimatePresence>
+    <html lang="en">
+      <body className={`${inter.variable} ${satoshi.variable}`}>
+        <Header />
+        <main>{children}</main>
+      </body>
+    </html>
   );
 }

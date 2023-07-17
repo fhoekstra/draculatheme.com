@@ -3,16 +3,59 @@
   min-height: 25rem;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--hero-background-color-01);
   background-image: linear-gradient(
     to bottom,
     var(--hero-background-color-01),
     var(--hero-background-color-02)
   );
+  z-index: 1;
 
   .particles {
     position: absolute;
     inset: 0;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+
+    &.main {
+      width: 100%;
+      margin: -3rem 0 0 0;
+      display: flex;
+      flex-flow: wrap column;
+      align-items: center;
+
+      .dracula-icon {
+        width: 12rem;
+        height: 12rem;
+        display: flex;
+
+        img,
+        svg {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .title-wrapper {
+        width: 100%;
+        display: flex;
+        flex-flow: wrap column;
+        align-items: center;
+        gap: 1rem;
+
+        .title {
+          line-height: 1;
+        }
+      }
+    }
   }
 
   .castle {
@@ -20,10 +63,10 @@
     height: 100%;
     position: absolute;
     bottom: -0.5rem;
-    background-image: url("/images/hero.svg");
+    background-image: url("/images/hero/castle.svg");
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    z-index: 1;
+    z-index: 3;
   }
 }

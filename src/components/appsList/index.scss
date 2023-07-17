@@ -1,0 +1,77 @@
+.apps-wrapper {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 64rem;
+
+  .apps-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: wrap row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.5rem;
+
+    .app {
+      a {
+        width: 20rem;
+        height: fit-content;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        border-radius: var(--radius-l);
+        text-decoration: none;
+        background-color: var(--background-color-02);
+        transition: background-color 0.32s ease-in-out;
+
+        .icon {
+          width: 5rem;
+          height: 5rem;
+          display: flex;
+
+          img,
+          svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+
+        .content {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          display: flex;
+          align-items: flex-start;
+          flex-flow: wrap column;
+          gap: 0.5rem;
+          line-height: 1.5;
+
+          .title,
+          .views {
+            text-align: left;
+          }
+
+          .title {
+            font-size: 1rem;
+          }
+
+          .views {
+            font-size: 0.75rem;
+            color: var(--text-color-02);
+          }
+        }
+
+        &:focus-within,
+        &:hover {
+          background-color: var(--background-color-03);
+        }
+      }
+    }
+  }
+}

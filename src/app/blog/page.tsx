@@ -8,6 +8,7 @@ import LinesEllipsisLoose from "react-lines-ellipsis/lib/loose";
 import Link from "next/link";
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
+import { fadeInUp } from "src/lib/framerMotion";
 import { motion } from "framer-motion";
 
 const Blog = () => {
@@ -23,9 +24,10 @@ const Blog = () => {
     <>
       <Hero />
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
+        variants={fadeInUp}
+        initial="initial"
+        animate="animate"
+        exit="exit"
         className="page-wrapper blog"
       >
         <div className="highlighted-post">
@@ -34,8 +36,8 @@ const Blog = () => {
               <Image
                 src={highlightPost.coverImage}
                 alt={highlightPost.title}
-                width={400}
-                height={200}
+                width={364}
+                height={192}
               />
             </div>
             <div className="content">

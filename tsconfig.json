@@ -27,5 +27,6 @@
     ".contentlayer/generated",
     ".next/types/**/*.ts"
   ],
+  "typeRoots": ["./node_modules/@types", "./src/types"],
   "exclude": ["node_modules"]
 }

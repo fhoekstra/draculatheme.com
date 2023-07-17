@@ -7,6 +7,7 @@ import { format, parseISO } from "date-fns";
 import Hero from "src/components/hero";
 import Image from "next/image";
 import { allPosts } from "contentlayer/generated";
+import { fadeInUp } from "src/lib/framerMotion";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { motion } from "framer-motion";
 
@@ -27,9 +28,10 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     <>
       <Hero />
       <motion.article
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
+        variants={fadeInUp}
+        initial="initial"
+        animate="animate"
+        exit="exit"
         className="page-wrapper blog-post"
       >
         <div className="cover-image">
